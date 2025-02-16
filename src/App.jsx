@@ -25,14 +25,13 @@ PrivateRoute.propTypes = {
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Toaster position="top-right" />
         <Routes>
-          <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route
-            path="/dashboard/*"
+            path="/*"
             element={
               <PrivateRoute>
                 <Layout>
